@@ -5,8 +5,8 @@ INCDIR = inc
 OBJDIR = out
 SRCDIR = src
 
-OBJECTS = $(OBJDIR)/main.o
-MAIN_INCLUDES =
+OBJECTS = $(OBJDIR)/main.o $(OBJDIR)/Lexer.o $(OBJDIR)/Token.o
+MAIN_INCLUDES = $(INCDIR)/Lexer.h $(INCDIR)/Token.h
 
 .PHONY: all
 all: $(OBJECTS)
@@ -21,7 +21,8 @@ $(OBJDIR)/%.o : $(SRCDIR)/%.cpp $(INCDIR)/%.h
 $(OBJDIR):
 	mkdir $(OBJDIR)
 
-.cpp.h:
+.cpp:
+	$(CXX) -c $@ -o $(OBJDIR)/$(*F).o
 
 .PHONY: run
 run:
