@@ -5,8 +5,8 @@ INCDIR = inc
 OBJDIR = out
 SRCDIR = src
 
-OBJECTS = $(OBJDIR)/main.o $(OBJDIR)/Lexer.o $(OBJDIR)/Token.o
-MAIN_INCLUDES = $(INCDIR)/Lexer.h $(INCDIR)/Token.h
+OBJECTS = $(OBJDIR)/main.o $(OBJDIR)/Lexer.o $(OBJDIR)/Token.o $(OBJDIR)/Expr.o $(OBJDIR)/Parser.o
+MAIN_INCLUDES = $(INCDIR)/Lexer.h $(INCDIR)/Expr.h  $(INCDIR)/Parser.h 
 
 .PHONY: all
 all: $(OBJECTS)
